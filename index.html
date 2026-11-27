@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>愤怒的章鱼 · ANGRY OCTO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Noto+Sans+SC:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 30%, #f5a263 0%, #c9693d 55%, #4a2315 100%);
+        font-family: 'Fredoka', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        touch-action: none;
+      }
+
+      #app {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      #game-stage {
+        position: relative;
+        aspect-ratio: 9 / 16;
+        height: 100dvh;
+        max-width: 100vw;
+        max-height: calc(100vw * 16 / 9);
+        box-shadow: 0 24px 80px rgba(38, 15, 5, 0.55);
+        border-radius: 0;
+        overflow: hidden;
+        background: #f69b63;
+      }
+
+      @media (min-aspect-ratio: 10/16) {
+        #game-stage {
+          height: min(96dvh, 960px);
+          border-radius: 24px;
+          border: 4px solid #331c0e;
+        }
+      }
+
+      #game-canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="game-stage">
+        <canvas id="game-canvas" width="900" height="1600"></canvas>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
